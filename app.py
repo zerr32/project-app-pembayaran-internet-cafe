@@ -16,13 +16,13 @@ makan = {
 }
 
 minum = {
-    "1": ("☕ Kopi Panas", 3000),
-    "2": ("🧊 Es Kopi", 5000),
-    "3": ("🍵 Teh Panas", 3000),
-    "4": ("🥤 Es Teh", 5000),
-    "5": ("🍊 Jus Jeruk", 8000),
-    "6": ("🍋 Es Jeruk", 8000),
-    "7": ("🍨 Parfait", 10000)
+    "1": {"nama":"☕ Kopi Panas","harga":3000},
+    "2": {"nama":"🧊 Es Kopi","harga":5000},
+    "3": {"nama":"🍵 Teh Panas","harga":3000},
+    "4": {"nama":"🥤 Es Teh","harga" : 5000},
+    "5": {"nama": "🍊 Jus Jeruk","harga" : 8000},
+    "6": {"nama":"🍋 Es Jeruk","harga" : 8000},
+    "7": {"nama":"🍨 Parfait","harga":10000}
 }
 
 print("===================================================")
@@ -107,14 +107,15 @@ for i in range(pelanggan):
 
     if pesan_minum.lower() == 'y':
         while True:
-            for kode, (nama_minuman, harga_minuman) in minum.items():
-                print(f"{kode}. {nama_minuman:<25} Rp{harga_minuman}")
+            for kode, item in minum.items():
+                print(f"{kode}. {item['nama']:<25} Rp{item['harga']}")
             pilih_minuman = input("Pilih minuman (1-7, 0 jika selesai): ")
 
             if pilih_minuman == '0':
                 break
             if pilih_minuman in minum:
-                nama_minuman, harga_minuman = minum[pilih_minuman]
+                nama_minuman= minum[pilih_minuman]['nama']
+                harga_minuman = minum[pilih_minuman]['harga']
                 jumlah = int(input("Jumlah gelas: "))
                 subtotal = harga_minuman * jumlah
                 pesanan_minuman.append((nama_minuman, jumlah, subtotal))
@@ -157,8 +158,10 @@ for i in range(pelanggan):
             try:
                 if paket == "💎 Paket VIP":
                     bayar_uang = int(input(f"Anda mendapatkan potongan VIP {int(potongan_vip)}\nTotal pembayaran: Rp{int(total_bayar)}\nMasukkan jumlah uang: "))
-                else:
+                elif diskon > 0:
                     bayar_uang = int(input(f"Anda mendapatkan potongan member {int(potongan)}\nTotal pembayaran: Rp{int(total_bayar)}\nMasukkan jumlah uang: "))
+                else:
+                    bayar_uang = int(input(f"Total pembayaran: Rp{int(total_bayar)}\nMasukkan jumlah uang: "))
                 if bayar_uang < total_bayar:
                     print("⚠️ Uang kurang, silakan tambah lagi.")
                 else:
