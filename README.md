@@ -9,15 +9,16 @@ Program sederhana untuk membuat struk pembayaran dari internet cafe
 -metode pembayaran seperti tunnai,e wallet,kartu 
 -serta riwayat pembayaran
 
-##Teknologi
+###Teknologi
 -python
 -pandas
 
-##Persyaratan
+###Persyaratan
 -python 3.0
 
-##instalasi
+###instalasi
 1.clone atau download repository ini
 2.masuk ke folder project
 3.install dependecy
-  pip install pandas
+'''bash
+pip install pandas
