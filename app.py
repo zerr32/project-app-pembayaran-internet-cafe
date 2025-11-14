@@ -219,7 +219,7 @@ for i in range(pelanggan):
         print(f"Jumlah Uang Pembayaran: Rp{bayar_uang}")
         print(f"Metode Bayar   : {metode_bayar}")
         print(f"Kembalian      : Rp{int(kembalian)}")
-    print(f"Tanggal        : {riwayat}")
+    print(f"Tanggal Struk      : {riwayat}")
     print("====================================")
     print("Mata modote kudasai~ ❤️  Arigatou gozaimasu goshujin-sama!")
     print("====================================\n")
