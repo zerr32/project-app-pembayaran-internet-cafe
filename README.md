@@ -2,28 +2,25 @@
 
 Program sederhana untuk membuat struk pembayaran dari internet cafe 
 
-##Fitur
+# Fitur
+- pemesanan paket billing (normal/vip)
+- makanan serta minuman
+- penghitungan diskon untuk member dan vip
+- metode pembayaran seperti tunnai,e wallet,kartu 
+- serta riwayat pembayaran
 
+#   Teknologi
+- python
+- pandas
 
--pemesanan paket billing (normal/vip)
--makanan serta minuman
--penghitungan diskon untuk member dan vip
--metode pembayaran seperti tunnai,e wallet,kartu 
--serta riwayat pembayaran
-
-##Teknologi
-
--python
--pandas
-
-##Persyaratan
+# Persyaratan
 
 -python 3.0
 
-##instalasi
+# Instalasi
 
-1.clone atau download repository ini
-2.masuk ke folder project
-3.install dependecy
-'''bash
-pip install pandas
+1. clone atau download repository ini
+2. masuk ke folder project
+3. install dependecy
+   ``` bash
+   pip install pandas
