@@ -4,22 +4,23 @@ Program sederhana untuk membuat struk pembayaran dari internet cafe
 
 ##Fitur
 
+
 -pemesanan paket billing (normal/vip)
 -makanan serta minuman
 -penghitungan diskon untuk member dan vip
 -metode pembayaran seperti tunnai,e wallet,kartu 
 -serta riwayat pembayaran
 
-###Teknologi
+##Teknologi
 
 -python
 -pandas
 
-###Persyaratan
+##Persyaratan
 
 -python 3.0
 
-###instalasi
+##instalasi
 
 1.clone atau download repository ini
 2.masuk ke folder project
