@@ -1,10 +1,11 @@
 
 import random 
 from datetime import datetime
-import pandas as pd
+
 
 ruangan = ["room1", "room2", "room3", "room4", "room5", "room6", "room7", "room8", "room9", "room10"]
 
+history = []
 
 makan = {
     "1": {"nama":"🍜 Mie Indomie", "harga": 5000},
@@ -145,22 +146,34 @@ for i in range(pelanggan):
 
     print("\n💳 PILIH METODE PEMBAYARAN 💳")
     print("1. Tunai")
-    print("2. E-Wallet")
-    print("3. Kartu Debit/Kredit")
+    print("2. Kartu Debit")
 
-    metode = input("Pilih metode (1/2/3): ")
-    metode_bayar = {"1": "Tunai", "2": "E-Wallet", "3": "Kartu Debit/Kredit"}.get(metode, "Lainnya")
+    metode_bayar = {"1": "Tunai","2": "Kartu Debit"}.get(metode,"lainnya")
+    metode = input("Pilih metode (1/2): ")
 
     bayar_uang = 0
     kembalian = 0
-    if metode in ["1", "2", "3"]:
+    if metode in ["1","2"]:
         while True:
             try:
                 if paket == "💎 Paket VIP":
-                    bayar_uang = int(input(f"Anda mendapatkan potongan VIP {int(potongan_vip)}\nTotal pembayaran: Rp{int(total_bayar)}\nMasukkan jumlah uang: "))
+                    if metode == "1":
+                        bayar_uang = int(input(f"Anda mendapatkan potongan VIP sebesar Rp.{int(potongan_vip)}\nTotal pembayaran: Rp{int(total_bayar)}\nMasukkan jumlah uang: "))
+                    if metode == "2":
+                        print(f"Anda mendapatkan potongan VIP sebesar Rp.{int(potongan_vip)}")
+                        pin = int(input("masukan pin anda : "))
+                        bayar_uang = int(input(f"Total pembayaran: Rp{int(total_bayar)}\nMasukkan jumlah uang: "))
                 elif diskon > 0:
-                    bayar_uang = int(input(f"Anda mendapatkan potongan member {int(potongan)}\nTotal pembayaran: Rp{int(total_bayar)}\nMasukkan jumlah uang: "))
+                    if metode == "1":
+                        bayar_uang = int(input(f"Anda mendapatkan potongan member {int(potongan)}\nTotal pembayaran: Rp{int(total_bayar)}\nMasukkan jumlah uang: "))
+                    if metode == "2":
+                        print(f"Anda mendapatkan potongan member sebesar Rp.{int(potongan)}")
+                        pin = int(input("masukan pin anda : "))
+                        bayar_uang = int(input(f"Total pembayaran: Rp{int(total_bayar)}\nMasukkan jumlah uang:"))
+                elif metode == "1":
+                    bayar_uang = int(input(f"Total pembayaran: Rp{int(total_bayar)}\nMasukkan jumlah uang: "))
                 else:
+                    pin = int(input("masukan pin anda"))
                     bayar_uang = int(input(f"Total pembayaran: Rp{int(total_bayar)}\nMasukkan jumlah uang: "))
                 if bayar_uang < total_bayar:
                     print("⚠️ Uang kurang, silakan tambah lagi.")
@@ -215,7 +228,7 @@ for i in range(pelanggan):
         print(f"Potongan member vip : -Rp{int(potongan_vip)}")
     print(f"TOTAL BAYAR    : Rp{int(total_bayar)}")
     print("------------------------------------")
-    if metode in ["1", "2", "3"]:
+    if metode in ["1","2"]:
         print(f"Jumlah Uang Pembayaran: Rp{bayar_uang}")
         print(f"Metode Bayar   : {metode_bayar}")
         print(f"Kembalian      : Rp{int(kembalian)}")
