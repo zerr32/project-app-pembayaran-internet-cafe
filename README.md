@@ -6,8 +6,7 @@ Program sederhana untuk membuat struk pembayaran dari internet cafe
 - pemesanan paket billing (normal/vip)
 - makanan serta minuman
 - penghitungan diskon untuk member dan vip
-- metode pembayaran seperti tunnai,e wallet,kartu 
-- serta riwayat pembayaran
+- metode pembayaran seperti tunai,kartu 
 
 #   Teknologi
 - python
