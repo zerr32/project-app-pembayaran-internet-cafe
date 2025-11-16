@@ -5,7 +5,7 @@ from datetime import datetime
 
 ruangan = ["room1", "room2", "room3", "room4", "room5", "room6", "room7", "room8", "room9", "room10"]
 
-history = []
+
 
 makan = {
     "1": {"nama":"🍜 Mie Indomie", "harga": 5000},
