@@ -26,11 +26,12 @@ minum = {
     "7": {"nama":"🍨 Parfait","harga":10000}
 }
 
-print("===================================================")
-print("==============  デジタル注文システム  ==============")
-print("===============  DEJITARU CHŪMON  ================")
-print("===================================================")
-print()
+print("=======================================================================================================================")
+print("|                                                                                                                     |")
+print("|                                DEJITARU CHŪMON  •  デジタル注文システム                                             |")
+print("|                                                                                                                     |")
+print("=======================================================================================================================")
+
 
 pelanggan = int(input("Masukkan jumlah pelanggan: "))
 
@@ -148,8 +149,9 @@ for i in range(pelanggan):
     print("1. Tunai")
     print("2. Kartu Debit")
 
-    metode_bayar = {"1": "Tunai","2": "Kartu Debit"}.get(metode,"lainnya")
     metode = input("Pilih metode (1/2): ")
+
+    metode_bayar = {"1": "Tunai","2": "Kartu Debit"}.get(metode,"lainnya")
 
     bayar_uang = 0
     kembalian = 0
